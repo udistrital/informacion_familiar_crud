@@ -11,7 +11,7 @@ import (
 )
 
 type Familiar struct {
-	Id                   int               `orm:"column(id);pk"`
+	Id                   int               `orm:"column(id);pk;auto"`
 	PersonaRelacionadaId int               `orm:"column(persona_relacionada_id)"`
 	Trabaja              bool              `orm:"column(trabaja);null"`
 	NivelEducacionId     int               `orm:"column(nivel_educacion_id);null"`
