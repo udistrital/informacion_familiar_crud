@@ -17,8 +17,8 @@ type Familiar struct {
 	NivelEducacionId     int               `orm:"column(nivel_educacion_id);null"`
 	OcupacionId          int               `orm:"column(ocupacion_id);null"`
 	Activo               bool              `orm:"column(activo)"`
-	FechaCreacion        time.Time         `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion    time.Time         `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion        time.Time         `orm:"column(fecha_creacion);type(timestamp without time zone);auto_now_add"`
+	FechaModificacion    time.Time         `orm:"column(fecha_modificacion);type(timestamp without time zone);auto_now"`
 	RelacionFamiliarId   *RelacionFamiliar `orm:"column(relacion_familiar_id);rel(fk)"`
 }
 
