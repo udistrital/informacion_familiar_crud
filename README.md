@@ -25,3 +25,5 @@ Ejemplo: API_INFORMACION_FAMILIAR_CRUD_HTTP_PORT=8080 INFORMACION_FAMILIAR_CRUD_
 ## MODELO DE DATOS
 
 Como modelos de datos del Api se utilizo el siguiente 
+
+![image](https://github.com/udistrital/informacion_familiar_crud/blob/dev/informacion_familiar.png)
