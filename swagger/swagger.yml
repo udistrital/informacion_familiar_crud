@@ -11,6 +11,121 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 basePath: /v1
 paths:
+  /acudiente/:
+    get:
+      tags:
+      - acudiente
+      description: get Acudiente
+      operationId: AcudienteController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Acudiente'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - acudiente
+      description: create Acudiente
+      operationId: AcudienteController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Acudiente content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Acudiente'
+      responses:
+        "201":
+          description: '{int} models.Acudiente'
+        "400":
+          description: the request contains incorrect syntax
+  /acudiente/{id}:
+    get:
+      tags:
+      - acudiente
+      description: get Acudiente by id
+      operationId: AcudienteController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Acudiente'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - acudiente
+      description: update the Acudiente
+      operationId: AcudienteController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Acudiente content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Acudiente'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Acudiente'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - acudiente
+      description: delete the Acudiente
+      operationId: AcudienteController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
   /familiar/:
     get:
       tags:
@@ -242,6 +357,33 @@ paths:
         "404":
           description: not found resource
 definitions:
+  models.Acudiente:
+    title: Acudiente
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      CorreoElectronico:
+        type: string
+      Direccion:
+        type: string
+      FamiliarId:
+        $ref: '#/definitions/models.Familiar'
+      FechaCreacion:
+        type: string
+        format: datetime
+      FechaModificacion:
+        type: string
+        format: datetime
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      Principal:
+        type: boolean
+      Telefono:
+        type: string
   models.Familiar:
     title: Familiar
     type: object
@@ -298,3 +440,6 @@ tags:
 - name: familiar
   description: |
     FamiliarController operations for Familiar
+- name: acudiente
+  description: |
+    AcudienteController operations for Acudiente
