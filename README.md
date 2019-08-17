@@ -20,10 +20,10 @@ Definir los valores de las siguientes variables de entorno:
  - `INFORMACION_FAMILIAR_CRUD__PGDB`: Nombre de la base de datos
  - `INFORMACION_FAMILIAR_CRUD__SCHEMA`: Esquema a utilizar en la base de datos
 
-Ejemplo: API_INFORMACION_FAMILIAR_CRUD_HTTP_PORT=8080 INFORMACION_FAMILIAR_CRUD__PGUSER=postgres INFORMACION_FAMILIAR_CRUD__PGPASS=12345678 INFORMACION_FAMILIAR_CRUD__PGURLS=localhost INFORMACION_FAMILIAR_CRUD__PGDB=informacion_familiar_1 INFORMACION_FAMILIAR_CRUD__SCHEMA=informacion_familiar bee run -downdoc=true -gendoc=true
+Ejemplo: API_INFORMACION_FAMILIAR_CRUD_HTTP_PORT=8080 INFORMACION_FAMILIAR_CRUD__PGUSER=postgres INFORMACION_FAMILIAR_CRUD__PGPASS=12345678 INFORMACION_FAMILIAR_CRUD__PGURLS=localhost INFORMACION_FAMILIAR_CRUD__PGDB=informacion_familiar INFORMACION_FAMILIAR_CRUD__SCHEMA=informacion_familiar bee run -downdoc=true -gendoc=true
 
 ## MODELO DE DATOS
 
 Como modelos de datos del Api se utilizo el siguiente 
 
-![image](https://github.com/udistrital/informacion_familiar_crud/blob/dev/informacion_familiar.png)
+![image](https://github.com/udistrital/informacion_familiar_crud/blob/acudiente/informacion_familiar.png)
