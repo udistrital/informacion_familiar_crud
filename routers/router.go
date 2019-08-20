@@ -27,6 +27,12 @@ func init() {
 				&controllers.FamiliarController{},
 			),
 		),
+
+		beego.NSNamespace("/acudiente",
+			beego.NSInclude(
+				&controllers.AcudienteController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }
